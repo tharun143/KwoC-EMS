@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{{url_for('static', filename='js/myscript.js')}}"></script>
+
+<style>
+
+.red { color: #d00909; }  
+.green { color: #3c763d; }  
+
+</style>
+
+
+    <div class="container">
+        <h1>Hello, {{ current_user.username }}!</h1>
+        <br>
+        <p> <a href="{{ url_for('add_transaction') }}" class="btn btn-success">New Transaction</a> <i class="fa fa-file-text-o fa-2x" aria-hidden="true" style="margin-left: 15px;"></i> <a href="{{ url_for('get_returns') }}" style="margin-left:800px;" class="btn btn-primary"> Get Returns </a> </p>
+        <br>
+        <h1>Overview of all transactions</h1> 
+        <h1>{{ r }}</h1> 
+        <br>
+        <input class="form-control mb-4" id="tableSearch" type="text" placeholder="Type something to search list items">
+        <br>
+        <table class="table table-bordered table-striped" id="keywords">
+            <thead>
+                <tr style="background-color: #dddddd">
+                    <th>Transaction Id</th>
+                    <th>Date</th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Tools</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+            {% for po in transaction %}
+                <tr>
+                    <td>{{ po.tr_id }}</td>
+                    <td>{{ po.date }}</td>
+                    <td>{{ po.tr_type }}</td>
+                    <td>Rs. {{ po.amount }}</td>
+                    <td>{{ po.description }}</td>
+                    <td>{% if po.valid == False %}
+                      <p style="text-align: center;"><i class="fa fa-circle red" aria-hidden="true"> Pending</i></p>
+                      {% else %}
+                      <p style="text-align: center;"><i class="fa fa-circle green" aria-hidden="true"> Done</i></p>
+                      {% endif %}
+                    </td>
+                    <td> <button type="button" class="btn btn-default"><a href="{{ url_for('edit_transaction', trans_id = po.id) }}"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a></button> 
+                    <button type="button" class='btn btn-default'><a href="{{ url_for('add_comment', trans_id = po.id) }}"><i class="fa fa-comments-o fa-1x" aria-hidden="true"></i></a></button> </td>
+                </tr>
+            {% endfor %}                            
+            </tbody>
+        </table>
+    </div>                          
+{% endblock %}

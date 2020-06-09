@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{{url_for('static', filename='js/myscript.js')}}"></script>
+
+	<div class="container">
+		<h1>Welcome, {{ current_user.username }}!</h1>
+		<br>
+		<h1>Overview of all transactions</h1> 
+		<br>
+		<input class="form-control mb-4" id="tableSearch" type="text" placeholder="Type something to search list items">
+        <br>
+        <table class="table table-bordered table-striped" id="keywords">
+            <thead>
+                <tr style="background-color: #dddddd">
+                    <th>Transaction Id</th>
+                    <th>Date</th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>File Name</th>
+                    <th>Tools</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+            {% for po in transaction %}
+                <tr>
+                    <td>{{ po.tr_id }}</td>
+                    <td>{{ po.date }}</td>
+                    <td>{{ po.tr_type }}</td>
+                    <td>Rs. {{ po.amount }}</td>
+                    <td>{{ po.description }}</td>
+                    <td>
+                      {% for d in document%}
+                          {% if d.transaction_id == po.id %}
+                              <p>{{d.filename}}</p>
+                          {% endif %}    
+                      {% endfor %}
+                    </td>
+                    <td> <button type="button" class='btn btn-default'><a href="{{ url_for('add_comment', trans_id = po.id) }}"><i class="fa fa-comments-o" aria-hidden="true"></i></a></button>
+                    <button type="button" class="btn btn-default"><a href="{{ url_for('update_status', trans_id = po.id)}}"><i class="fa fa-wrench" aria-hidden="true"></i></a></button> 
+                    </td>
+                </tr>
+            {% endfor %}                            
+            </tbody>
+        </table>
+	</div>
+{% endblock %}

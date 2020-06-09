@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<style type="text/css">
+	.role-tag{
+		padding:.8rem 2rem;
+		font-size:20px;
+		display:inline-block;
+		background:#000;
+		border-radius:2rem;
+		color:#fff;
+		box-shadow:2px 3px 5px rgba(0,0,0,.3)
+	}
+	.backend{
+		background:#4a148c!important
+	}
+	.vcs{
+		background:#228B22!important
+	}
+	.codereview{
+		background:#e65100!important
+	}
+	.frontend{
+		background:#0277bd!important
+	}
+	.mentor{
+		background:#00897b!important
+	}
+</style>
+		
+	<h1 style="font-size: 50px; text-align: center; padding-bottom:50px;"><b>Meet the Developers</b></h1>			
+		
+
+	<div class="col-md-12">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/tharun.jpg')}}" alt="Tharun Ravuri" style="max-width: 150px; height: auto; margin-left: 20px; margin-top: 10px;">
+		</div>
+
+		<div class="col-md-9">
+			<h1 style="font-family: courier;">Tharun Ravuri</h1>
+			<h4 class="role-tag frontend">Front-end web developer</h4>
+			<p style="font-size: 20px;">Tharun Ravuri a cse undergraduate from Amrita University has extensive and disverse experience in front-end web development. He led the front-end of the application and designed the application.</p>
+		</div>
+
+	<div class="col-md-12" style="padding-top: 50px;">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/namburuharshith.jpg')}}" alt="Harshith" style="max-width: 150px; height: auto; margin-right:50px;margin-top: 50px;">
+		</div>
+
+		<div class="col-md-9">
+			<h1 style="font-family: courier;">Namburu Harshith</h1>
+			<h4 class="role-tag backend">Back-end web developer</h4>
+			<p style="font-size: 20px;">Namburu Harshith a cse undergraduate from Amrita University worked on back-end of this application. He has extensive experience on building technology platforms for various business verticals such as Enterprise Management System, Delivery Management System.</p>
+		</div>
+	</div>
+
+	<div class="col-md-12" style="padding-top: 50px;">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/deepth.jpeg')}}" alt="Deepthi" style="max-width: 150px; height: auto;">
+		</div>
+
+		<div class="col-md-9">
+			<h1 style="font-family: courier;">Akula Sri Deepthi</h1>
+			<h4 class="role-tag codereview">Version Control System</h4>
+			<p style="font-size: 20px;">Akula Sri Deepthi a cse undergraduate from Amrita University worked on code review. Armed with the diverse experience of working in code review she reviewed the entire application and made a meaningful contribution towards the application.</p>
+		</div>
+	</div>
+
+	<div class="col-md-12" style="padding-top: 50px;">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/konda.jpg')}}" alt="Dinesh" style="max-width: 150px; height: auto;margin-top: 30px;">
+		</div>
+
+		<div class="col-md-9">
+			<h1 style="font-family: courier;">Dinesh Ch</h1>
+			<h4 class="role-tag vcs">Data Base Manager</h4>
+			<p style="font-size: 20px;">Dinesh Ch a cse undergraduate from Amrita University worked on the version control system and handled the application perfectly without raising any conflicts.</p>
+		</div>
+	</div>
+
+	<div class="col-md-12" style="padding-top: 50px;">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/konda2.jpg')}}" alt="Dheeraj" style="max-width: 150px; height: auto;margin-top: 30px;">
+		</div>
+
+		<div class="col-md-9" style="margin-top: 20px;">
+			<h1 style="font-family: courier;">Dheeraj Varma</h1>
+			<h4 class="role-tag vcs">Tester</h4>
+			<p style="font-size: 20px;">Dheeraj Varma a cse undergraduate from Amrita University worked on the version control system and handled the application perfectly without raising any conflicts.</p>
+		</div>
+		<br>
+		<hr>
+		<h1 style="font-size: 50px; text-align: center; padding-top:250px;"><b>Meet the Mentors</b></h1>			
+
+	<div class="col-md-12" style="padding-top: 50px;">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/maya.jpg')}}" alt="Maya Menon" style="max-width: 100%; height: auto;margin-top: 30px; margin-right: 50px;">
+		</div>
+		<div class="col-md-9" style="margin-top: 20px;">
+			<h1 style="font-family: courier;">Maya Menon</h1>
+			<h4 class="role-tag mentor">Product Owner</h4>
+			<p style="font-size: 20px;">Maya Menon currently serves as Assistant Professor at the Department of Computer Science and Engineering, School of Engineering, Amrita Vishwa Vidyapeetham, Amritapuri campus. She completed her undergraduate in Computer Science from Arizona State University, USA in 2010 and Masters in Robotics and Automation from Amrita Viswa Vidyapeetham, India in 2016. Prior to joining Amrita, Maya worked as a Software Consultant and Project Manager at CA Technologies in Scottsdale, Arizona, USA and is a PMP-certified professional.</p>
+		</div>
+	</div>
+
+	<div class="col-md-12" style="padding-top: 50px;">
+
+		<div class="col-md-3">
+			<img src="{{ url_for('static', filename= 'images/rahul.jpg')}}" alt="rahul" style="max-width: 100%; height: auto;margin-top: 30px; margin-right: 50px;">
+		</div>
+		<div class="col-md-9" style="margin-top: 20px;">
+			<h1 style="font-family: courier;">Rahul Varma U</h1>
+			<h4 class="role-tag mentor">Product Owner</h4>
+			<p style="font-size: 20px;">Rahul Varma U currently serves as Faculty Associate at the Department of Computer Science and Applications at Amrita School of Engineering, Amritapuri. He completed his Master of Computer Application (MCA) from Amrita Vishwa Vidyapeetham and currently pursuing his doctoral studies. Rahul has an industry experience of around 3 years in Cognizant Technology Solutions. </p>
+		</div>
+	</div>
+{% endblock %}

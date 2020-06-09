@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+
+<div class="col-md-12">
+
+	<div class="col-md-6">
+		<h1 style="padding-bottom: 20px;">Update Status: <span style="color: #FF1493;">{{ tr.tr_id }}</span></h1>
+		<table class="table table-bordered table-striped">
+				<tr  style="background-color: #dddddd">
+					<th>Date</th>
+					<td>{{ tr.date }}</td>
+				</tr>
+				<tr>
+					<th>Transaction Type</th>
+					<td>{{ tr.tr_type}}</td>
+				</tr>
+				<tr  style="background-color: #dddddd">
+					<th>Amount</th>
+					<td>{{ tr.amount }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ tr.description }}</td>
+				</tr>
+				<tr  style="background-color: #dddddd">
+					<th>Status</th>
+					<td>{% if tr.valid == False %}
+						<p>Pending</p>
+						{% else %}
+						<p>Verified</p>
+						{% endif %}
+					</td>
+				</tr>
+		</table>
+    	<div class="row">
+        	<div class="col-md-6">
+            	{{ wtf.quick_form(form) }}
+        	</div>
+    	</div>
+    	<br>
+    	<p><a href="{{ url_for('acc_index') }}"  class="btn btn-success">Back</a></p>
+	</div>
+
+	<div class=col-md-6>
+		<img src="{{ url_for('static', filename= 'images/status.jpg')}}" alt="update" style="max-width: 100%; height: auto">
+	</div>
+</div>
+
+{% endblock %}

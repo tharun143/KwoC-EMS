@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+<h2 style="text-align:center">User Profile Card</h2>
+<br>
+
+<div class="col-md-12">
+
+  <div class="col-md-4">
+    <img src="{{ url_for('static', filename= 'images/profile1.png')}}" alt="profile" style="max-width: 100%; height: auto;">
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{{ user.avatar(150) }}" alt="Gravtar" style="border-radius:60%;">
+      <br>
+      <h1>{{ user.username }}</h1>
+      <p class="title">{{ user.about_me }}</p>
+      {% if user.job == "Acc" %}
+        <p>Accountant</p>
+      {% else %}
+        <h3>Enterpurner</h3>
+      {% endif %}
+      {% if user.designation != "" %}
+        <h4><b>Designation :</b>  {{ user.designation }}</h4>
+      {% endif %}
+      {% if user.company != "" %}
+        <h4><b>Company :</b>   {{ user.company }}</h4>
+      {% endif %}
+      <a href="{{ user.facebook }}" style="margin-left:5px; color:#3b5998;"><i class="fa fa-facebook-square fa-1x"></i></a>
+      <a href="{{ user.twitter }}" style="margin-left:5px; color:#55acee;"><i class="fa fa-twitter fa-1x"></i></a>
+      <a href="{{ user.linkedin }}" style="margin-left:5px;color:#0976b4;"><i class="fa fa-linkedin fa-1x"></i></a>
+      <p style="margin-top: 5px;"><button><a href="{{ url_for('edit_profile') }}">Edit Profile</button></a></p>
+
+      {% if current_user.job =='Acc' %}
+       <p style="margin-top: 5px;"><button><a href="{{ url_for('acc_index') }}">Back</button></a></p>
+      {% else %}
+        <p style="margin-top: 5px;"><button><a href="{{ url_for('index') }}">Back</button></a></p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <img src="{{ url_for('static', filename= 'images/profile2.jpg')}}" alt="profile" style="max-width: 100%; height: auto;">
+  </div>
+
+</div>
+
+
+{% endblock %}   
+
+
+
+
+
+ 

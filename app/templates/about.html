@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+.rwd-table {
+  margin: 1em 0;
+  min-width: 300px;
+}
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.rwd-table th {
+  display: none;
+}
+.rwd-table td {
+  display: block;
+}
+.rwd-table td:first-child {
+  padding-top: .5em;
+}
+.rwd-table td:last-child {
+  padding-bottom: .5em;
+}
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
+}
+@media (min-width: 480px) {
+  .rwd-table td:before {
+    display: none;
+  }
+}
+.rwd-table th, .rwd-table td {
+  text-align: left;
+}
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .rwd-table th:first-child, .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 0;
+  }
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+}
+.rwd-table tr {
+  border-color: #46637f;
+}
+.rwd-table th, .rwd-table td {
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    padding: 1em !important;
+  }
+}
+.rwd-table th, .rwd-table td:before {
+  color: #dd5;
+}
+</style>
+
+    <h1>Enterprise Management System</h1>
+    <br>
+
+    <p style="text-align: center; margin-top: 10px;"><img src="/static/images/EMS.jpg" alt="Enterprise Management System" style="width:750px; height: auto;"></p> 
+    <br>
+    <p style="font-size: 20px;"><b style="font-family: courier">Enterprise Management System (EMS)</b> mainly intends on making the enterprise work ease and effortless. It focuses on managing the accounts of the Enterprise by jotting down the transactions done by an enterprise. The transactions are updated by the enterprise to the accountant through the website.</p>
+    <br>
+    <p style="font-size: 20px;">The application is having separate portals for both the enterprise and the accountant. The transactions are secured and the application maintains data abstraction from the other enterprises.</p>
+    <br>
+
+    <div class="col-mod-12">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename= 'images/enter.jpg')}}" alt="enterpreneur" style="max-width: 500px; height: auto;">
+        </div>
+        <div class="col-md-6">
+            <h1 style="font-family: courier;">Enterpreneur</h1>
+            <p style="font-size: 20px;">The enterprise portal holds text fields to enter the details of transactions and a dropbox for uploading documents. Additionally, it can also show the status of the transactions and the entreprenuer can get the returns of his transactions.</p>
+            <h4><b>Fields included in Enterpreneur Portal</b></h4>
+            <ul style="font-size: 20px;">
+                <li>Transaction ID</li>
+                <li>Date</li>
+                <li>Transaction Type</li>
+                <li>Amount</li>
+                <li>Description</li>
+                <li>Status</li>
+                <li>Drop box</li>
+                <li>Edit access</li>
+                <li>Comment access</li>
+            </ul>
+        </div>
+    </div>
+
+        <div class="col-md-12" style="padding-top: 30px; padding-bottom:30px;">
+            <div class="col-md-6">
+                <h1 style="font-family: courier;">Accountant</h1>
+                <p style="font-size: 20px;">The accountant portal consists of transactions from an enterprise. The transactions also contain relevant documents and proofs. If there are no valid documents for a particular transaction then the accountant can comment on the particular transaction. Once the transaction is verified the accountant updates the status of the transaction(pending or done). The accountant can generate the Income Tax returns of an Enterprise.
+                <br /> 
+                By this, we can make sure that the transaction is not lost and delivered.</p>
+                <h4><b>Fields included in Accountant Portal</b></h4>
+                <ul style="font-size: 20px;">
+                    <li>Transaction ID</li>
+                    <li>Date</li>
+                    <li>Transaction Type</li>
+                    <li>Amount</li>
+                    <li>Description</li>
+                    <li>Status</li>
+                    <li>Comment access</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename= 'images/account.jpg')}}" alt="accountant" style="max-width: 600px; height: auto;">
+            </div>
+        </div>
+
+        <div style="text-align: center;" class="col-md-12">
+            <h1 style="padding-bottom: 10px;">Functional & Non-Functional Provisions</h1>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename= 'images/left.png')}}" alt="enterpreneur" style="max-width: 100%; height: auto; padding-top: auto; padding-bottom: auto;">
+            </div>
+            <div class="col-md-4">
+                <table class="rwd-table" style="margin-left:auto; margin-right:auto">
+                    <tr>
+                        <th>Functional</th>
+                        <th>Non-Functional</th>
+                    </tr>
+                    <tr>
+                        <td data-th="Movie Title">Authentication</td>
+                        <td data-th="Genre">Security</td>
+                    </tr>
+                    <tr>
+                        <td data-th="Movie Title">Authorization</td>
+                        <td data-th="Genre">Data Integrity</td>
+                    </tr>
+                    <tr>
+                        <td data-th="Movie Title">Transaction Adjustments</td>
+                        <td data-th="Genre">Environmental</td>
+                    </tr>
+                    <tr>
+                        <td data-th="Movie Title">Transaction validations</td>
+                        <td data-th="Genre">Capacity</td>
+                    </tr>
+                    <tr>
+                        <td data-th="Movie Title">Tax generation</td>
+                        <td data-th="Genre">Maintainability</td>
+                    </tr>
+                    <tr>
+                        <td data-th="Movie Title">Commenting on transactions</td>
+                        <td data-th="Genre">Manageability</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename= 'images/right.jpg')}}" alt="enterpreneur" style="max-width: 100%; height: auto; padding-top: auto; padding-bottom: auto;">
+            </div>
+        </div>
+    {% if current_user.job =='Acc' %}
+        <p><a href="{{ url_for('acc_index') }}"  class="btn btn-success">Back</a></p>
+    {% else %}
+        <p><a href="{{ url_for('index') }}"  class="btn btn-success">Back</a></p>
+    {% endif %}
+    
+{% endblock %}
+
+
+
+
+
+

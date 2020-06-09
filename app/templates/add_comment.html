@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<style type="text/css">
+    @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+.rwd-table {
+  margin: 1em 0;
+  min-width: 300px;
+}
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.rwd-table th {
+  display: none;
+}
+.rwd-table td {
+  display: block;
+}
+.rwd-table td:first-child {
+  padding-top: .5em;
+}
+.rwd-table td:last-child {
+  padding-bottom: .5em;
+}
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
+}
+@media (min-width: 480px) {
+  .rwd-table td:before {
+    display: none;
+  }
+}
+.rwd-table th, .rwd-table td {
+  text-align: left;
+}
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .rwd-table th:first-child, .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 0;
+  }
+}
+
+
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+}
+.rwd-table tr {
+  border-color: #46637f;
+}
+.rwd-table th, .rwd-table td {
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    padding: 1em !important;
+  }
+}
+.rwd-table th, .rwd-table td:before {
+  color: #dd5;
+}
+
+</style>
+
+
+<div class="col-md-12">
+  <div class="col-md-6">
+  <h1>Add Comment</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Recent Comments</h1>
+    <br>
+    {% for c in comm %}
+    <table class="rwd-table">
+        <tr>
+          <td width="70px">
+                <a href="{{ url_for('user', username=c.comment_by.username) }}">
+                    <img src="{{ c.comment_by.avatar(70) }}" style="border-radius:60%;">
+                </a>
+            </td>
+            <td>
+                <p style="font-size: 20px;"><a href="{{ url_for('user', username=c.comment_by.username) }}" style="margin-left:10px;">
+                    {{ c.comment_by.username }}
+                </a>says:</p>
+                <p style="margin-left: 10px; font-size:15px;">{{ c.comment }}</p> 
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% if current_user.job =='Acc' %}
+        <p><a href="{{ url_for('acc_index') }}"  class="btn btn-success">Back</a></p>
+    {% else %}
+        <p><a href="{{ url_for('index') }}"  class="btn btn-success">Back</a></p>
+    {% endif %}
+</div>
+  <div class="col-md-6">
+    <img src="{{ url_for('static', filename= 'images/comments.jpg')}}" alt="comment" style="max-width: 650px; height: auto;">
+  </div>
+</div>
+{% endblock %}

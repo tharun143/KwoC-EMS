@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Enterprise Management System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<a class="logo">Enterprise Management System</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+	<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="{{ url_for('register')}}">Register</a></li>
+				<li><a href="{{ url_for('login')}}">Login</a></li>
+				<li><a href="{{ url_for('about')}}">About</a></li>
+				<li><a href="{{ url_for('contact')}}">Contact Us</a></li>
+				<li><a href="{{ url_for('brd')}}">Board Of Directors</a></li>
+				<li><a href="{{ url_for('explore')}}">Explore</a></li>
+			</ul>
+		</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1><b>Enterprise Management System</b></h1>
+					<p>A responsive business oriented system <br /> making Enterpreneur's work easy</p>
+				</div>
+				<video autoplay loop muted playsinline src="{{ url_for('static', filename= 'images/banner.mp4')}}"></video>
+			</section>
+
+		<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2><b>What's covered in our system?</b></h2>
+						<p>Our system provides a reliable and efficient functions in making the Enterprise work ease and effortless.</p>
+					</header>
+					<div class="highlights">
+						<section>
+							<div class="content">
+								<header>
+									<a class="icon fa-vcard-o"><span class="label">Icon</span></a>
+									<h3><b>Mini Personal Portfolio</b></h3>
+								</header>
+								<p>You don't need to speak!! We will speak for you. Having a personal portfolio speaks lot about you. Know about your associates in one click.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a class="icon fa-file-text-o"><span class="label">Icon</span></a>
+									<h3><b>Add Transactions</b></h3>
+								</header>
+								<p>No paper work needed!!! Just add your transaction by clicking one button. We will take care of the rest.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a class="icon fa-pencil-square-o"><span class="label">Icon</span></a>
+									<h3><b>Edit the Transactions</b></h3>
+								</header>
+								<p>Oh!! A minor error in transaction can cause a major loss. But don't worry, edit your transaction with one button.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a class="icon fa-comments-o"><span class="label">Icon</span></a>
+									<h3><b>Comment on Transactions</b></h3>
+								</header>
+								<p>Hmm..!! Do you anything to say with the accountant.
+								Relax!!! We got you. Discuss with them by just clicking one button. <br /><b>Ps: Trust us. Your discussions are secured.</b></p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a class="icon fa-money"><span class="label">Icon</span></a>
+									<h3><b>Get your Returns</b></h3>
+								</header>
+								<p>Finding out the valid transactions and generating results is an absolute nightmare. But leave it to us. We are expert in tackling nightmares. We will generate returns for you.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<h3><b>Save a copy of your Returns</b></h3>
+								</header>
+								<p>It’s scary to see your documents with returns lost somewhere. It's ok! We got your back, you can get an instant PDF of your returns.<br /><b>PS: Save Nature, Say NO to paper</b></p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- CTA -->
+			<section id="cta" class="wrapper">
+				<div class="inner">
+					<h2><b>Here's why you will love Enterprise Management Sysytem</b></h2>
+					<p><b style="font-size: 120px;">0</b> Paper work, only with <b style="font-size: 120px;">1</b> click you can do everything. The system is in just between <b style="font-size: 120px;">2</b> people restricted access for the <b style="font-size: 120px;">3</b> rd party</p>
+				</div>
+			</section>
+
+		<!-- Testimonials -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2><b>Feed Back</b></h2>
+						<p>Our Enterprise Management System is helping the top Entrepreneurs across the world in getting the returns. 
+							<br /> It's <b>Incredibly Efficient</b>, <b>Terribly Convenient</b> and <b>Hassle Free</b></p>
+					</header>
+					<div class="testimonials">
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>One striking difference between EMS and typical management systems is reliability and efficiency. EMS is the saviuor for Entrepreneurs.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="{{ url_for('static', filename= 'images/thop01.jpg')}}" alt="Sundar Pichai">
+									</div>
+									<p class="credit">- <strong>Sundar Pichai</strong><br> <span>CEO - Alphabets Inc.</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>I have got no time to check my taxes and to get returns. It's was a hectitc situation to me before EMS arrives. But now, with just one click I could finish everything.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="{{ url_for('static', filename= 'images/thop2.jpg')}}"alt="Bill Gates">
+									</div>
+									<p class="credit">- <strong>Bill Gates</strong> <br> <span>Co-founder - Microsoft</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>EMS's terrible convenience, incredible efficiency made sure my experience was completely hassle-free!</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="{{ url_for('static', filename= 'images/thop03.jpg')}}" alt="" />
+									</div>
+									<p class="credit">- <strong>Elon Musk</strong> <br> <span>CEO - SpaceX</span></p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<img src="{{ url_for('static', filename= 'images/ems.jpg')}}" style="border-radius:80%; width:200; height:200px;">
+
+							<h3><b>Enterprise Management System</b></h3>
+							<p>Amrita Vishwa Vidyapeetham, <br />
+								Amritapuri Campus, <br />
+								Clappana, Kollam- 690525, Kerala. <br />
+								Email: enterprisemanagementsystemems@gmail.com
+							</p>
+						</section>
+						<section>
+							<ul class="alt">
+								<li><a href="{{ url_for('terms')}}">Terms & Conditions</a></li>
+								<li><a href="{{ url_for('policy')}}">Privacy Policy</a></li>
+								<li><a href="{{ url_for('disclaimer')}}">Disclaimer</a></li>
+								<li><a href="{{ url_for('contact')}}">Contact Us</a></li>
+								<li><a href="{{ url_for('brd')}}">Board of Directors</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>We're Socially active</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+								<li><a href="#"><i class="icon fa-youtube">&nbsp;</i>Youtube</a></li>
+								<li><a href="#"><i class="icon fa-linkedin">&nbsp;</i>LinkedIn</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Copyright 2020, Built with 💗 by <b>SAAHO</b>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='js/main.js')}}"></script>
+	</body>
+</html>

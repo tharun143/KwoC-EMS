@@ -1,0 +1,363 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<link rel="canonical" href="https://codepen.io/jatinrao/pen/abzRLGj">
+
+<style>
+  body {
+    margin: 0;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    color: rgb(136, 146, 176);
+}
+
+.title {
+    color: rgba(139, 180, 216, 0.94);
+}
+
+.sidebar {
+    background-color: rgb(23, 42, 69);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    color: rgb(136, 146, 176);
+    opacity: 1;
+}
+
+
+.image-overlay {
+    background: url('https://i.imgur.com/SsVBVWk.png') 20%;
+    opacity: 0.5;
+}
+
+.sidebar-image {
+    width: 150px;
+    border-radius: 100%;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.sidebar-link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(139, 180, 216, 0.94);
+}
+
+.sidebar-link:hover {
+    color: rgb(230, 241, 255);
+
+}
+.header-name {
+    font-weight: 600;
+    color: rgb(230, 241, 255);
+}
+
+.column-header {
+    border-bottom: 2px rgb(45, 57, 82) solid;
+    margin-bottom: 1rem;
+}
+
+.column-header > h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    color: white;
+}
+
+.icon, .sidebar-link {
+    transition-duration: 250ms;
+}
+
+.icon:hover {
+    color: white;
+}
+
+.terminal-bar {
+    background-color: #eae8e9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    position: relative;
+}
+
+.dark-mode {
+    background-image: linear-gradient(180deg, #464248 0%, #3b383d 100%);
+    border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+}
+
+.dark-mode-text {
+    color: #bdb9bf !important;
+}
+
+.icon-btn {
+    border-radius: 50%;
+    margin-top: 7px;
+    height: 15px;
+    width: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.terminal-bar > div.icon-btn:first-child {
+    margin-left: 0.6rem;
+}
+
+.terminal-bar > div.icon-btn:not(:first-child) {
+    margin-left: 0.5rem;
+}
+
+.terminal-bar > div.icon-btn:last-child {
+    margin-right: 0.6rem;
+}
+
+.close {
+    background-color: #fa615c;
+}
+
+.max {
+    background-color: #3fc950;
+}
+
+.min {
+    background-color: #ffbd48;
+}
+
+.terminal-window {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 254px;
+    padding: .5rem 0rem 0rem .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-bg {
+    background-color: rgb(23, 42, 69);
+}
+
+.shadow {
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.terminal-bar-text {
+    position: absolute;
+    margin-top: 3px;
+    color: #383838;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.has-equal-height {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-output {
+    overflow-y: hidden;
+    overflow: auto;
+}
+
+.column-child {
+    flex: 1;
+}
+
+.terminal-line {
+    position: relative;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: .9rem;
+    color: #b7c5d2;
+}
+
+.directory {
+    color: #75e1e7;
+    font-weight: 500;
+}
+
+.success {
+    color: #8dd39e;
+}
+
+.code, .error, .fa-heart {
+    color: #d7566a
+}
+
+.fa-heart {
+    padding-top: 0.5rem;
+}
+
+.dummy-keyboard {
+    opacity:0;
+    filter:alpha(opacity=0);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .resume {
+      padding-bottom: 0.5rem;
+    }
+}
+</style>
+
+<script>
+  const BLACKLISTED_KEY_CODES = [ 38 ];
+const COMMANDS = {
+  help:
+    'Supported commands: <span class="code">whoami</span>, <span class="code">social_media</span>, <span class="code">mail</span>, <span class="code">address</span>, <span class="code">bye</span>',
+  whoami:
+    "Hello 👋<br>I'm Macho. I’m here to help you. Type mail in the terminal and drop you query to our mail. Our reponses are better than our puns. For more updates follow us on our social media accounts.",
+
+  social_media:
+    "Follow us on social media: <br><a href='#' class='success link'>Facebook</a> ,<a href='#' class='success link'>Instagram</a>, <a href='#' class='success link'>Twitter</a>, <a href='#' class='success link'>Github</a>, <a href='#' class='success link'>Youtube</a>",
+  mail:
+    "xxxx@gmail.com",
+  address:
+    "Amritapuri Vishwa Vidyapeetham, <br> Amritapuri Campus, <br> Clappana, Kollam - 690525, Kerala",
+  bye:
+    "Thank you! We will respond to your query shortly."
+};
+
+let userInput, terminalOutput;
+
+const app = () => {
+  userInput = document.getElementById("userInput");
+  terminalOutput = document.getElementById("terminalOutput");
+  document.getElementById("dummyKeyboard").focus();
+  console.log("Application loaded");
+};
+
+const execute = function executeCommand(input) {
+  let output;
+  input = input.toLowerCase();
+  if (input.length === 0) {
+    return;
+  }
+  output = `<div class="terminal-line"><span class="success">➜</span> <span class="directory">~</span> ${input}</div>`;
+  if (!COMMANDS.hasOwnProperty(input)) {
+    output += `<div class="terminal-line">no such command: ${input}</div>`;
+    console.log("Oops! no such command");
+  } else {
+    output += COMMANDS[input];
+  }
+
+  terminalOutput.innerHTML = `${
+    terminalOutput.innerHTML
+  }<div class="terminal-line">${output}</div>`;
+  terminalOutput.scrollTop = terminalOutput.scrollHeight;
+};
+
+const key = function keyEvent(e) {
+  const input = userInput.innerHTML;
+
+  if (BLACKLISTED_KEY_CODES.includes(e.keyCode)) {
+    return;
+  }
+
+  if (e.key === "Enter") {
+    execute(input);
+    userInput.innerHTML = "";
+    return;
+  }
+
+  userInput.innerHTML = input + e.key;
+};
+
+const backspace = function backSpaceKeyEvent(e) {
+  if (e.keyCode !== 8 && e.keyCode !== 46) {
+    return;
+  }
+  userInput.innerHTML = userInput.innerHTML.slice(
+    0,
+    userInput.innerHTML.length - 1
+  );
+};
+
+document.addEventListener("keydown", backspace);
+document.addEventListener("keypress", key);
+document.addEventListener("DOMContentLoaded", app);
+
+</script>
+
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-3 is-flex">
+          <div class="column-child sidebar shadow">
+            <div class="sidebar-header has-text-centered">
+              <img src="{{ url_for('static', filename= 'images/Avatar.png')}}" alt="Tharun Ravuri" class="sidebar-image" style="margin-bottom: 5px;">
+              <h2 class="header-name">Macho</h2>
+              <h5>At your service</h5>
+              <div class="social-icons">
+                <a href="{{ url_for('login')}}"><i class="fa fa-facebook icon"></i></a>
+                <a href="{{ url_for('login')}}"><i class="fa fa-twitter icon"></i></a>
+                <a href="{{ url_for('login')}}"><i class="fa fa-github icon"></i></a>
+                <a href="{{ url_for('login')}}"><i class="fa fa-linkedin icon"></i></a>
+                <a href="{{ url_for('login')}}"><i class="fa fa-instagram icon"></i></a>
+                <a href="{{ url_for('login')}}"><i class="fa fa-youtube icon"></i></a>
+              </div>
+              <div class="resume">
+                {% if current_user.job =='Acc' %}
+                  <a href="{{ url_for('acc_index')}}" class="sidebar-link" style="font-size: 25px;">HOME</a>
+                {% else %}
+                  <a href="{{ url_for('index')}}" class="sidebar-link" style="font-size: 25px;">HOME</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-flex">
+          <div class="column-child terminal shadow">
+            <div class="terminal-bar dark-mode">
+              <div class="icon-btn close"></div>
+              <div class="icon-btn min"></div>
+              <div class="icon-btn max"></div>
+              <div class="terminal-bar-text is-hidden-mobile dark-mode-text">Contact Us: ~</div>
+            </div>
+            <div class="terminal-window primary-bg" onclick="document.getElementById('dummyKeyboard').focus();">
+              <div class="terminal-output" id="terminalOutput">
+                <div class="terminal-line">
+                  <span class="help-msg">Welcome to contact page — Type <span class="code">help</span>
+                    for a list of supported commands.</span>
+                </div>
+              </div>
+              <div class="terminal-line">
+                <span class="success">➜</span> <span class="directory">~</span> <span class="user-input"
+                  id="userInput"></span>
+                <input type="text" id="dummyKeyboard" class="dummy-keyboard">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Made with <i class="fa fa-heart icon"></i> by <b>SAAHO</b>.
+      </p>
+    </div>
+  </footer>
+</section>
+

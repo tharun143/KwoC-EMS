@@ -1,0 +1,10 @@
+How does a browser decide which header lines to include in a request message? How does a Web server decide which header lines to include in a response
+message? A browser will generate header lines as a function of the browser type
+and version (for example, an HTTP/1.0 browser will not generate any 1.1 header
+lines), the user configuration of the browser (for example, preferred language), and
+whether the browser currently has a cached, but possibly out-of-date, version of the
+object. Web servers behave similarly: There are different products, versions, and
+configurations, all of which influence which header lines are included in response
+messages.
+--------------------------------------------------------------------------------------
+
