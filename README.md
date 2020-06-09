@@ -1,6 +1,9 @@
 ![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg) ![Open Source Love png2](https://badges.frapsoft.com/os/v2/open-source.png?v=103) ![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)
 
 # Enterprise-Management-System
+
+[![Join the chat at https://gitter.im/http-www-pclubsummerofcode-in/PSoC-EMS](https://badges.gitter.im/http-www-pclubsummerofcode-in/PSoC-EMS.svg)](https://gitter.im/http-www-pclubsummerofcode-in/PSoC-EMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Enterprise Management System (EMS) mainly intends on making the enterprise work ease and effortless. It focuses on managing the accounts of the Enterprise by jotting down the transactions done by an enterprise. The transactions are updated by the enterprise to the accountant through the website.
 
 The application is having separate portals for both the enterprise and the accountant. The transactions are secured and the application maintains data abstraction from the other enterprises.
