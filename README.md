@@ -83,7 +83,7 @@ The command above creates a directory called my-project-env, which contains a co
 
 Clone the repo in to your local pc
 
-> git clone https://github.com/tharun143/Enterprise-Management-System.git
+> git clone https://github.com/tharun143/PSoC-EMS.git
 
 Navigate to your repository
 
