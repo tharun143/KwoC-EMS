@@ -1,4 +1,5 @@
 ![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg) ![Open Source Love png2](https://badges.frapsoft.com/os/v2/open-source.png?v=103) ![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)
+[![Gitter](https://badges.gitter.im/Swacch-Amrita/community.svg)](https://gitter.im/PSoC-EMS/community#) [![Join the chat at https://gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS](https://badges.gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS.svg)](https://gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Enterprise-Management-System
 Enterprise Management System (EMS) mainly intends on making the enterprise work ease and effortless. It focuses on managing the accounts of the Enterprise by jotting down the transactions done by an enterprise. The transactions are updated by the enterprise to the accountant through the website.
@@ -82,7 +83,7 @@ The command above creates a directory called my-project-env, which contains a co
 
 Clone the repo in to your local pc
 
-> git clone https://github.com/tharun143/Enterprise-Management-System.git
+> git clone https://github.com/tharun143/KwoC-EMS.git
 
 Navigate to your repository
 
