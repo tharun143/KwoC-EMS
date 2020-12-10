@@ -1,5 +1,5 @@
 ![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg) ![Open Source Love png2](https://badges.frapsoft.com/os/v2/open-source.png?v=103) ![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)
-[![Gitter](https://badges.gitter.im/Swacch-Amrita/community.svg)](https://gitter.im/PSoC-EMS/community#) [![Join the chat at https://gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS](https://badges.gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS.svg)](https://gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS](https://badges.gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS.svg)](https://gitter.im/https-kwoc-kossiitkgp-org/Kwoc-EMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 # Enterprise-Management-System
